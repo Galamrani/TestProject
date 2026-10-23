@@ -1,8 +1,39 @@
+# Dependencies
 node_modules/
+
+# Build output
 dist/
+out-tsc/
 bin/
 obj/
+
+# Caches
+.angular/
+*.tsbuildinfo
+.sass-cache/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# Test output
+coverage/
+TestResults/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Editors / IDEs
 .vs/
 .vscode/
+.idea/
 *.user
+*.suo
+*.swp
+
+# OS
 .DS_Store
+Thumbs.db
