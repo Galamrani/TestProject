@@ -1,0 +1,18 @@
+@host = http://localhost:5080
+
+GET {{host}}/api/hello?name=Gal
+
+###
+GET {{host}}/api/todos
+
+###
+POST {{host}}/api/todos
+Content-Type: application/json
+
+{ "title": "Try the API" }
+
+###
+PUT {{host}}/api/todos/1/toggle
+
+###
+DELETE {{host}}/api/todos/1

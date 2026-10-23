@@ -1,0 +1,30 @@
+<main>
+  <h1>TestProject</h1>
+
+  <section>
+    <h2>Hello</h2>
+    <form (submit)="$event.preventDefault(); sayHello(name.value)">
+      <input #name placeholder="Your name" />
+      <button>Say hello</button>
+    </form>
+    <p class="muted">{{ helloOutput() }}</p>
+  </section>
+
+  <section>
+    <h2>Todos</h2>
+    <form (submit)="$event.preventDefault(); addTodo(todoTitle)">
+      <input #todoTitle placeholder="What needs doing?" />
+      <button>Add</button>
+    </form>
+    <ul>
+      @for (todo of todos(); track todo.id) {
+        <li [class.done]="todo.done">
+          <input type="checkbox" [checked]="todo.done" (change)="toggleTodo(todo)" />
+          <span>{{ todo.title }}</span>
+          <button class="delete" (click)="deleteTodo(todo)">✕</button>
+        </li>
+      }
+    </ul>
+    <p class="error">{{ error() }}</p>
+  </section>
+</main>
